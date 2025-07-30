@@ -1,26 +1,31 @@
 {
-  "name": "ESP32-S3 Smart Lock Dev",
+  "name": "ESP32-S3 Dev",
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."
   },
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "extensions": [
-    "espressif.esp-idf-extension",
-    "ms-vscode.cpptools",
-    "ms-vscode.cmake-tools",
-    "ms-python.python",
-    "xaver.clang-format",
-    "editorconfig.editorconfig",
-    "streetsidesoftware.code-spell-checker",
-    "notskm.include-autocomplete"
-  ]
-  "postCreateCommand": ". $IDF_PATH/export.sh && idf.py set-target esp32s3",
-  "remoteUser": "root",
+  "runArgs": [
+    "--device=/dev/ttyACM0"
+  ],
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind"
   ],
-  "workspaceFolder": "/workspace"
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "espressif.esp-idf-extension",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-python.python",
+        "xaver.clang-format",
+        "editorconfig.editorconfig",
+        "streetsidesoftware.code-spell-checker",
+        "notskm.include-autocomplete"
+      ]
+    },
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    }
+  }
 }

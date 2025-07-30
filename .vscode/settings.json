@@ -1,4 +1,5 @@
 {
     "idf.pythonInstallPath": "/opt/esp/.espressif/python_env/idf5.2_py3.10_env/bin/python",
-    "idf.port": "/dev/ttyACM0"
+    "idf.port": "/dev/ttyACM0",
+    "idf.flashType": "UART"
 }
